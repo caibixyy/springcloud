@@ -21,6 +21,10 @@ public class MessageProviderImpl implements IMessageProvider
     @Resource
     private MessageChannel output; // 消息发送管道
 
+    /**
+     * 发送的消息构建
+     * @return
+     */
     @Override
     public String send()
     {
