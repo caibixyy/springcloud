@@ -1,0 +1,8 @@
+server:
+  port: 9001
+
+
+
+  #访问地址   http://localhost:9001/hystrix
+
+  #监控地址  监控的服务+/hystrix.stream    http://localhost:8001/hystrix.stream
