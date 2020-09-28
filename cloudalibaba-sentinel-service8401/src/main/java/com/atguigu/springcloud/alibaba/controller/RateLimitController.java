@@ -64,4 +64,7 @@ public class RateLimitController
     /**
      * blockhandler管规则
      */
+    /**
+     * 忽略异常  exceptionsToIgnore
+     */
 }
