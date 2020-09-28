@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RateLimitController
 {
+
+    /**
+     * 自己兜底
+     * @return
+     */
     @GetMapping("/byResource")
     @SentinelResource(value = "byResource",blockHandler = "handleException")
     public CommonResult byResource()
@@ -26,6 +31,10 @@ public class RateLimitController
         return new CommonResult(444,exception.getClass().getCanonicalName()+"\t 服务不可用",null);
     }
 
+    /**
+     * 不兜底，使用默认
+     * @return
+     */
     @GetMapping("/rateLimit/byUrl")
     @SentinelResource(value = "byUrl")
     public CommonResult byUrl()
@@ -33,7 +42,10 @@ public class RateLimitController
         return new CommonResult(200,"按url限流测试OK",new Payment(2020L,"serial002"));
     }
 
-
+    /**
+     * 自己定义限流后的处理
+     * @return
+     */
     @GetMapping("/rateLimit/customerBlockHandler")
     @SentinelResource(value = "customerBlockHandler",
             blockHandlerClass = CustomerBlockHandler.class,

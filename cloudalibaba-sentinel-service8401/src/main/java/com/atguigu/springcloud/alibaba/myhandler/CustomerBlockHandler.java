@@ -5,8 +5,7 @@ import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 
 /**
- * @auther zzyy
- * @create 2020-02-25 15:32
+ * 统一处理限流的提示
  */
 public class CustomerBlockHandler
 {
